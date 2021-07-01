@@ -81,7 +81,7 @@ runStmt = mayFail . runGhc1 go
 -- put the closing parenthesis in a different line. However, now we are
 -- messing with the layout rules and we don't know where @s@ is going to
 -- be used!
--- Solution: @parens s = \"(let {foo =\n\" ++ s ++ \"\\n ;} in foo)\"@ where @foo@ does not occur in @s@
+-- Solution: @parens s = \"(let {foo =\\n\" ++ s ++ \"\\n ;} in foo)\"@ where @foo@ does not occur in @s@
 parens :: String -> String
 parens s = concat ["(let {", foo, " =\n", s, "\n",
                    "                     ;} in ", foo, ")"]
